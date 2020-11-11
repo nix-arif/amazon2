@@ -1,4 +1,5 @@
 import Product from "./components/Product"
+import data from "./data"
 
 function App() {
     return (
@@ -13,7 +14,11 @@ function App() {
 				</div>
 			</header>
 			<main>
-				<Product />
+				<div className="row center">
+					{data.products.map(product => (
+						<Product key={product._id} product={product} />
+					))}
+				</div>
 			</main>
 			<footer className="row center">All right reserved</footer>
 		</div>
